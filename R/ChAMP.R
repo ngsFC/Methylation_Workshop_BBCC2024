@@ -47,6 +47,9 @@ myNorm <- champ.norm(
   cores = cores-1
 )
 
+QC.GUI(beta=myNorm,
+       arraytype=type)
+
 champ.SVD(beta=as.data.frame(myNorm), 
           pd=myLoad$pd)
 
