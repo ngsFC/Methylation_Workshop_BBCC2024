@@ -5,11 +5,11 @@
 
 library(ChAMP)
 
-setwd("/home/ciccio/Desktop/project/BBCC2024_GSE145747")
+setwd("/home/ciccio/Desktop/project/BBCC2024_GSE145747/data")
 
 type <- "EPIC"
 norm <- "BMIQ"
-testDir <- "/home/ciccio/Desktop/project/BBCC_2025"
+testDir <- "/home/ciccio/Desktop/project/BBCC2024_GSE145747/data"
 
 myLoad <- champ.load(
   testDir,
@@ -31,11 +31,11 @@ myLoad <- champ.load(
   arraytype=type
 )
 
-#CpG.GUI(CpG=rownames(myLoad$beta),
-#        arraytype=type)
+CpG.GUI(CpG=rownames(myLoad$beta),
+        arraytype=type)
 
-#QC.GUI(beta=myLoad$beta,
-#       arraytype=type)
+QC.GUI(beta=myLoad$beta,
+       arraytype=type)
 
 cores <- detectCores()
 
@@ -58,9 +58,10 @@ myDMP <- champ.DMP(beta = myCombat,
                    pheno=myLoad$pd$Sample_Group,
                    arraytype = type)
 
-#DMP.GUI(DMP=myDMP[[1]],
-#        beta=myCombat,
-#        pheno=myLoad$pd$Sample_Group)
+
+DMP.GUI(DMP=myDMP[[1]],
+        beta=myCombat,
+        pheno=myLoad$pd$Sample_Group)
 
 myDMR <- champ.DMR(beta=myCombat,
                    pheno=myLoad$pd$Sample_Group,
@@ -69,11 +70,11 @@ myDMR <- champ.DMR(beta=myCombat,
                    cores = cores-1,
                    B=50)
 
-#DMR.GUI(DMR=myDMR,
-#        beta=myCombat,
-#        pheno = myLoad$pd$Sample_Group,
-#        runDMP = T,
-#        arraytype = type)
+DMR.GUI(DMR=myDMR,
+        beta=myCombat,
+        pheno = myLoad$pd$Sample_Group,
+        runDMP = T,
+        arraytype = type)
 
 myGSEA <- champ.GSEA(beta=myCombat,
                      DMP=myDMP[[1]], 
@@ -84,4 +85,4 @@ myGSEA <- champ.GSEA(beta=myCombat,
                      pheno=myLoad$pd$Sample_Group,
                      cores=cores-1)
 
-#View(myGSEA$DMP)
+View(myGSEA$DMP)
