@@ -32,7 +32,9 @@ Please bring a laptop with the following software pre-installed:
  -   ChAMP (https://bioconductor.org/packages/release/bioc/html/ChAMP.html)
  -   bumphunter (https://bioconductor.org/packages/release/bioc/html/bumphunter.html)
 
-
+### Data
+The dataset was downloaded from : https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE145747
+The pipeline follow the ChAMP vignette: https://www.bioconductor.org/packages/devel/bioc/vignettes/ChAMP/inst/doc/ChAMP.html
 
 
 
