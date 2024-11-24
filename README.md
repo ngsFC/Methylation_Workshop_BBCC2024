@@ -1,7 +1,9 @@
 # BBCC2024 - Bioinformatics and Computational Biology Conference
 
 ## "From Raw Matrices to Differential Expression/Methylation Patterns: A Functional Genomics Approach to Detect Molecular Insights."
-
+- Luca Ambrosino IGB-CNR
+- Francesco Cecere IGB-CNR
+  
  The training activity will be the 25th November held at:
  Consiglio Nazionale delle Ricerche (CNR)
  Address: Via Pietro Castellino 111, Naples
@@ -11,10 +13,10 @@
  The location is easily accessible via the Montedonzelli metro station. The course will take place in "Sala 1". Upon arrival, please sign in at the gate, and the security guard will provide directions to the room.
 
  ### Schedule:
-   Morning Session (9:30 AM – 1:00 PM): RNA-seq Data Analysis
-   Lunch Break (1:00 PM – 2:00 PM, NOT INCLUDED)
-   Afternoon Session (2:00 PM – 5:00 PM): Methylation Array Data Analysis
-   Discussion (5:00 PM - 5:30 PM)
+  - Morning Session (9:30 AM – 1:00 PM): RNA-seq Data Analysis
+  - Lunch Break (1:00 PM – 2:00 PM, NOT INCLUDED)
+  - Afternoon Session (2:00 PM – 5:00 PM): Methylation Array Data Analysis
+  - Discussion (5:00 PM - 5:30 PM)
 
  ### Requirement 
 Please bring a laptop with the following software pre-installed:
