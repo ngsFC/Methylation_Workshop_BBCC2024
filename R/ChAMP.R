@@ -73,7 +73,8 @@ myDMR <- champ.DMR(beta=myCombat,
                    pheno=myLoad$pd$Sample_Group,
                    method="Bumphunter",
                    arraytype = type,
-                   cores = cores-1,
+                   #cores = cores-1,
+                   cores = 1,
                    B=50)
 
 DMR.GUI(DMR=myDMR,
@@ -89,6 +90,8 @@ myGSEA <- champ.GSEA(beta=myCombat,
                      adjPval=0.05, 
                      method="fisher",
                      pheno=myLoad$pd$Sample_Group,
-                     cores=cores-1)
+                     #cores=cores-1
+                     cores = 1
+                    )
 
 View(myGSEA$DMP)
