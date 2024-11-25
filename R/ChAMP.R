@@ -5,11 +5,11 @@
 
 library(ChAMP)
 
-setwd("/home/ciccio/Desktop/project/BBCC2024_GSE145747/data")
+setwd("YOUR_DIRECTORY")
 
 type <- "EPIC"
 norm <- "BMIQ"
-testDir <- "/home/ciccio/Desktop/project/BBCC2024_GSE145747/data"
+testDir <- "YOUR_DIRECTORY"
 
 myLoad <- champ.load(
   testDir,
@@ -37,14 +37,15 @@ CpG.GUI(CpG=rownames(myLoad$beta),
 QC.GUI(beta=myLoad$beta,
        arraytype=type)
 
-cores <- detectCores()
+#cores <- detectCores()
 
 myNorm <- champ.norm(
   beta=myLoad$beta,
   arraytype=type, 
   method=norm,
   plotBMIQ = TRUE,
-  cores = cores-1
+  #cores = cores-1
+  cores = 1
 )
 
 QC.GUI(beta=myNorm,
@@ -57,10 +58,12 @@ myCombat <- champ.runCombat(beta=myNorm,
                             pd=myLoad$pd,
                             batchname=c("Slide"))
 
+QC.GUI(beta=myCombat,
+       arraytype=type)
+
 myDMP <- champ.DMP(beta = myCombat,
                    pheno=myLoad$pd$Sample_Group,
                    arraytype = type)
-
 
 DMP.GUI(DMP=myDMP[[1]],
         beta=myCombat,
